@@ -4,7 +4,7 @@
 
     </div>
 
-    {{-- <ul class="list-unstyled">
+    <ul class="list-unstyled">
         <li class=""><a href="{{ url('adminhome') }}"> <i class="icon-home"></i>Home </a></li>
         <li class=""><a href="{{ url('post_page') }}"> <i class="fa-solid fa-plus"></i>Tambah Berita</a></li>
         <li class=""><a href="{{ url('/show_post') }}"> <i class="fa-solid fa-newspaper"></i>Tampilan
@@ -24,5 +24,5 @@
             </ul>
         </li>
 
-    </ul> --}}
+    </ul>
 </nav>
