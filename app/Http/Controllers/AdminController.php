@@ -129,10 +129,6 @@ class AdminController extends Controller
             $request->image->move('postimage',$imagename);
     
             $post->image = $imagename;
-
-            $images = Post::paginate(3); // Menampilkan 3 gambar per halaman
-            
-            return view('home.service', compact('images'));
         }
 
     

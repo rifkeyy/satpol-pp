@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head> 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     @include('admin.css')
 
 
     <style type="text/css">
-
-        .title_deg
-        {
+        .title_deg {
             font-size: 30px;
             font-weight: bold;
             color: white;
@@ -19,115 +20,104 @@
         }
 
 
-        .table_deg
-        {
+        .table_deg {
             border: 1px solid white;
             width: 80%;
             text-align: center;
             margin-left: 70px;
         }
 
-        .th_deg
-        {
+        .th_deg {
             background-color: skyblue;
         }
 
-        .img_deg
-        {
+        .img_deg {
             height: 100px;
             width: 150px;
             padding: 10px;
         }
-
-
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     @include('admin.header')
     <div class="d-flex align-items-stretch">
-      <!-- Sidebar Navigation-->
-      @include('admin.sidebar')
-      <!-- Sidebar Navigation end-->
-      
+        <!-- Sidebar Navigation-->
+        @include('admin.sidebar')
+        <!-- Sidebar Navigation end-->
 
-      <div class="page-content">
 
-      @if (session()->has('message'))
+        <div class="page-content">
 
-      <div class="alert alert-danger">
+            @if (session()->has('message'))
+                <div class="alert alert-danger">
 
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
 
-      {{session()->get('message')}}
+                    {{ session()->get('message') }}
 
-      </div>
-      
-      @endif
+                </div>
+            @endif
 
-      <h1 class="title_deg">Semua Berita</h1>
+            <h1 class="title_deg">Sejarah</h1>
 
-        <table class="table_deg">
+            <table class="table_deg">
 
-            <tr class="th_deg">
-                <th>Description</th>
+                <tr class="th_deg">
+                    <th>Description</th>
 
-            </tr>
+                </tr>
 
-@foreach ($showsejarah as $post)
-          <tr>
+                @foreach ($showsejarah as $post)
+                    <tr>
 
-                <td>{{$sejarah->description}}</td>
+                        <td>{{ $sejarah->description }}</td>
 
-                    <a href="{{url('edit_page', $showsejarah->id)}}"class="btn btn-success">Edit</a>
+                        <a href="{{ url('edit_page', $showsejarah->id) }}"class="btn btn-success">Edit</a>
 
-                </td>
+                        </td>
 
-            </tr
-            @endforeach
+                    </tr @endforeach
             </table>
 
 
 
-</div>
-  @include('admin.footer')
+        </div>
+        @include('admin.footer')
 
-  <script type="text/javascript">
+        <script type="text/javascript">
+            function confirmation(ev) {
 
-      function confirmation(ev)
-      {
+                ev.preventDefault();
 
-          ev.preventDefault();
+                var urlToRedirect = ev.currentTarget.getAttribute('href');
 
-          var urlToRedirect=ev.currentTarget.getAttribute('href');
+                console.log(urlToRedirect);
 
-          console.log(urlToRedirect);
+                swal({
 
-          swal({
+                        title: "Are You Sure to dellete This ?",
 
-              title:"Are You Sure to dellete This ?" ,
+                        text: "You won't be able to revert this dellete ",
 
-              text : "You won't be able to revert this dellete ",
+                        icon: "warning",
 
-              icon : "warning",
+                        buttons: true,
 
-              buttons : true,
+                        dangerMode: true,
 
-              dangerMode : true ,
+                    })
 
-          })
+                    .then((willCancel) => {
 
-          .then((willCancel)=>
-          {
+                        if (willCancel) {
+                            window.location.href = urlToRedirect;
+                        }
 
-              if(willCancel)
-              {
-                  window.location.href=urlToRedirect;
-              }
+                    });
 
-          });
-
-      }
-
-  </script>
+            }
+        </script>
 </body>
+
 </html>
