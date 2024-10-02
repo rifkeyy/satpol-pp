@@ -97,13 +97,34 @@ Route::get('/map', 'MapController@index')->name('map');
 // sejarah
 Route::get('/inputsejarah', [AdminController::class, 'inputsejarah']);
 Route::post('/sejarah', [AdminController::class, 'sejarah']);
-Route::get('/showsejarah', [AdminController::class, 'showsejarah']);
 Route::get('/sejarah', function() {
     $sejarahs =DB::table('sejarahs')->get();
     return view('home/sejarah', ['sejarah' =>$sejarahs]);
 
 });
+
+Route::get('show_sejarah', [AdminController::class, 'show_sejarah']);
+Route::get('/edit_sejarah/{id}', [AdminController::class, 'edit_sejarah']);
+
     
+
+//tupoksi 
+Route::get('/input_tupoksi', [AdminController::class, 'input_tupoksi']);
+Route::post('/tupoksi', [AdminController::class, 'tupoksi']);
+Route::get('/tupoksi', function() {
+    $tupoksis =DB::table('tupoksis')->get();
+    return view('home/tupoksi', ['tupoksi' =>$tupoksis]);
+
+});
+
+// susunan organisasi
+Route::get('/input_susunanorganisasi', [AdminController::class, 'input_susunanorganisasi']);
+Route::post('/susunan_organisasi', [AdminController::class, 'susunan_organisasi']);
+Route::get('/susunan_organisasi', function() {
+    $susunan_organisasis =DB::table('susunan_organisasis')->get();
+    return view('home/susunan_organisasi', ['susunan_organisasi' =>$susunan_organisasis]);
+});
+
 // gallery
 Route::get('/post_galeri', [AdminController::class, 'post_galeri']);
 Route::post('/post_galeri', [AdminController::class, 'post_galeri']);

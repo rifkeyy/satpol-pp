@@ -1,234 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      @include('home.homecss')
+   </head>
+   <body>
 
-<head>
-    @include('home.homecss')
-</head>
+<style type="text/css">
+*,
+header {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-<body>
+.header_section {
+   width: 100%;
+   float: left;
+   background-image: url(../images/.jpg);
+   height: auto;
+   background-size: 100%;
+   padding: 0px 0px 0px 0px;
+}
 
-    <style type="text/css">
-        *,
-        header {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+.bg-light {
+    background-color: transparent !important;
+}
 
-        .header_section {
-            width: 100%;
-            float: left;
-            background-image: url(../images/.jpg);
-            height: auto;
-            background-size: 100%;
-            padding: 0px 0px 0px 0px;
-        }
+.mobile_menu {
+    width: 100%;
+    display: flex;
+}
 
-        .bg-light {
-            background-color: transparent !important;
-        }
+.navbar-light .navbar-nav .nav-link {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Georgia", serif;
+}
 
-        .mobile_menu {
-            width: 100%;
-            display: flex;
-        }
+.navbar-nav {
+    align-items: 0;
+}
 
-        .navbar-light .navbar-nav .nav-link {
-            font-size: 16px;
-            text-transform: uppercase;
-            color: #fff;
-            font-family: "Georgia", serif;
-        }
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: "Georgia", serif;
+}
 
-        .navbar-nav {
-            align-items: 0;
-        }
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 20px;
+    padding-left: 20px;
+}
 
-        .btn:not(:disabled):not(.disabled) {
-            cursor: pointer;
-            border-radius: 20px;
-            border: 2px solid #fff;
-            color: #fff;
-            font-family: "Georgia", serif;
-        }
+.nav-item {
+    position: relative;
+}
 
-        .navbar-expand-lg .navbar-nav .nav-link {
-            padding-right: 20px;
-            padding-left: 20px;
-        }
+.menu_main {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    font-family: "Georgia", serif;
+    padding: 20px;
+    padding-left: 100px;
+}
 
-        .nav-item {
-            position: relative;
-        }
+.menu_main ul {
+    margin: 0px;
+    align-items: center;
+    list-style: none;
+    display: inline-flex;
+    font-family: "Georgia", serif;
+}
 
-        .menu_main {
-            -ms-flex-direction: column;
-            flex-direction: column;
-            list-style: none;
-            width: 100%;
-            text-align: center;
-            font-family: "Georgia", serif;
-            padding: 20px;
-            padding-left: 100px;
-        }
+.menu_main li {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Georgia", serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    border-radius: 40px;
+}
 
-        .menu_main ul {
-            margin: 0px;
-            align-items: center;
-            list-style: none;
-            display: inline-flex;
-            font-family: "Georgia", serif;
-        }
+.logo {
+    width: 100px;
+    margin-left: 5rem;
+}
 
-        .menu_main li {
-            padding-left: 10px;
-            padding-right: 10px;
-            font-family: "Georgia", serif;
-            font-size: 16px;
-            text-transform: uppercase;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            color: #fff;
-            border-radius: 40px;
-        }
+.judul {
+    float: right;
+    font-family: "Georgia", serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
 
-        .logo {
-            width: 100px;
-            margin-left: 5rem;
-        }
+.menu_main li a {
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
 
-        .judul {
-            float: right;
-            font-family: "Georgia", serif;
-            font-size: 12px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-left: 1rem;
-            margin-top: 1rem;
-        }
+.menu_main li a:hover {
+    color: #ffffff;
+    background-color: #432ff5;
+    border-radius: 7px;
+}
 
-        .menu_main li a {
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
+.mb-lg-0,
+.my-lg-0 {
+    margin-bottom: 0 !important;
+    width: 20%;
+    float: center;
+}
 
-        .menu_main li a:hover {
-            color: #000000;
-            background-color: #432ff5;
-            border-radius: 7px;
-        }
+.header_main {
+    width: 100%;
+    background-image: url(../images/banner2.jpg);
+    background-size: 100%;
+    padding: 10px 0px 0px 0px;
+}
+   </style>
 
-        .mb-lg-0,
-        .my-lg-0 {
-            margin-bottom: 0 !important;
-            width: 20%;
-            float: center;
-        }
+      <div class="header_section">
+         @include('home.header')
 
-        .header_main {
-            width: 100%;
-            background-image: url(../images/banner2.jpg);
-            background-size: 100%;
-            padding: 10px 0px 0px 0px;
-        }
-    </style>
+      </div>
 
-    <div class="header_section">
-        @include('home.header')
+      <style type="text/css">
 
-    </div>
+                  .btn_main
+                  {
+                     padding-bottom: 100px;
+                  }
 
-    <div class="choose_section layout_padding">
-        <div class="container">
-            <h1 class="choose_taital">Susunan Organisasi</h1>
-            <p class="choose_text">-</p>
-        </div>
-    </div>
+                  .modal-header {
+                     margin-bottom: 30px;
+                  }
 
-    <style type="text/css">
-        .text-bg {
-            width: 100%;
-            font-size: 16px;
-            font-family: "Georgia", serif;
-            color: #ffffff;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+                  .choose_taital {
+                     width: 100%;
+                     font-size: 40px;
+                     font-family: "Georgia", serif;
+                     color: #1f1f1f;
+                     font-weight: bold;
+                     text-align: center;
+                  }
 
-        .lin-bg {
-            width: 100%;
-            font-size: 16px;
-            font-family: "Georgia", serif;
-            color: #ffffff;
-            font-weight: bold;
-            font-weight: normal;
-            margin-bottom: 8px;
-        }
-    </style>
+                  .btn_main
+                  {
+                     padding-bottom: 100px;
+                  }
 
-    <div class="footer_section layout_padding">
-        <div class="container">
+               </style>
+      
+      <div class="choose_section layout_padding">
+         <div class="container">
+         <div class="modal-header">
+            @foreach ($susunan_organisasi as $post)
+         <h5 class="choose_taital">Susunan Organisasi</h5></div>
+         <div class="services_section_2">
+               <div class="row">
+               <div class="col-md-4">
+                     <p>{{$post->name}}</p>
+                     <p>{{$post->nip}}</p>
+                     <p>{{$post->jabatan}}</p>
+                     <img src="/postimage/{{$post->image}}" class="services_img">
+                 
+                  </div>
+            </div>
+             
+      </div>
+    @endforeach
+      <!-- choose section end -->
+      <!-- footer section start -->
+      <style type="text/css">
+.text-bg {
+   width: 100%;
+    font-size: 16px;
+    font-family: "Georgia", serif;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h4 class="text-bg">Informasi</h4>
-                            <ul>
-                                <li class="lin-bg"><a href="">Alamat</a></li>
-                                <li class="lin-bg"><a href="">Telepon</a></li>
-                                <li class="lin-bg"><a href="">Email</a></li>
-                                <li class="lin-bg"><a href="">Twitter</a></li>
-                                <li class="lin-bg"><a href="">Facebook</a></li>
-                                <li class="lin-bg"><a href="">Instagram</a></li>
-                                <li class="lin-bg"><a href="">You Tube</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 class="text-bg">Tentang Kami</h4>
-                            <ul>
-                                <li class="lin-bg"><a href={{ url('sejarah') }}>Profil</a></li>
-                                <li class="lin-bg"><a href={{ url('struktur_organisasi') }}>Struktur Organisasi</a></li>
-                                <li class="lin-bg"><a href={{ url('tupoksi') }}>Tupoksi</a></li>
-                                <li class="lin-bg"><a href={{ url('susunan_organisasi') }}>Susunan Organisasi</a></li>
-                                <li class="lin-bg"><a href={{ url('permohonan_informasi') }}>Permohonan Informasi</a>
-                                </li>
-                                <li class="lin-bg"><a href={{ url('permohonan_keberatan') }}>Permohonan Keberatan</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 class="text-bg">Maps</h4>
-                            <iframe src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=-6.1751,106.8650"
-                                width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+.lin-bg {
+   width: 100%;
+    font-size: 16px;
+    font-family: "Georgia", serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+      </style>
 
-        </div>
-    </div>
+      <div class="footer_section layout_padding">
+         <div class="container">
 
-    <div class="copyright_section">
-        <div class="container">
-            <div class="copyright_section">
-                <div class="container">
-                    <p class="copyright_text">Copyright &copy; 2024 | Powered by <a href="https://html.design">STT
-                            Cipasung</a></p>
-                </div>
+         <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+               <h4 class="text-bg">Informasi</h4>
+                  <ul>
+                     <li class="lin-bg"><a href="">Alamat</a></li>
+                     <li class="lin-bg"><a href="">Telepon</a></li>
+                     <li class="lin-bg"><a href="">Email</a></li>
+                     <li class="lin-bg"><a href="">Twitter</a></li>
+                     <li class="lin-bg"><a href="">Facebook</a></li>
+                     <li class="lin-bg"><a href="">Instagram</a></li>
+                     <li class="lin-bg"><a href="">You Tube</a></li>
+                  </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="text-bg">Tentang Kami</h4>
+                <ul>
+                     <li class="lin-bg"><a href={{url('sejarah')}}>Profil</a></li>
+                     <li class="lin-bg"><a href={{url('struktur_organisasi')}}>Struktur Organisasi</a></li>
+                     <li class="lin-bg"><a href={{url('tupoksi')}}>Tupoksi</a></li>
+                     <li class="lin-bg"><a href={{url('susunan_organisasi')}}>Susunan Organisasi</a></li>
+                     <li class="lin-bg"><a href={{url('permohonan_informasi')}}>Permohonan Informasi</a></li>
+                     <li class="lin-bg"><a href={{url('permohonan_keberatan')}}>Permohonan Keberatan</a></li>
+                  </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="text-bg">Maps</h4>
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=-6.1751,106.8650" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
+</footer>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
-    <script src="js/plugin.js"></script>
+         </div>
+      </div>
 
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
+      <div class="copyright_section">
+         <div class="container">
+         <div class="copyright_section">
+         <div class="container">
+         <p class="copyright_text">Copyright &copy; 2024 | Powered by <a href="https://html.design">STT Cipasung</a></p>
+         </div>
+      </div>
+         </div>
+      </div>
 
-    <script src="js/owl.carousel.js"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>

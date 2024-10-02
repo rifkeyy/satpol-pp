@@ -10,11 +10,13 @@
         <li class=""><a href="{{ url('/show_post') }}"> <i class="fa-solid fa-newspaper"></i>Tampilan
                 Berita</a></li>
         <li class=""><a href="{{ url('/inputsejarah') }}"> <i class="fa-solid fa-plus"></i>Tambah Sejarah</a></li>
-        <li class=""><a href="{{ url('/showsejarah') }}"><i class="fa-solid fa-newspaper"></i>Tampilan Sejarah</a>
+        <li class=""><a href="{{ url('/show_sejarah') }}"><i class="fa-solid fa-newspaper"></i>Tampilan
+                Sejarah</a>
         </li>
-        <li class=""><a href="{{ url('post_galeri') }}"> <i class="fa-regular fa-image"></i>Tambah Galeri</a></li>
-        <li class=""><a href="{{ url('/') }}"> <i class="fa-solid fa-newspaper"></i></i>Tampilan Berita</a>
-        </li>
+        <li class=""><a href="{{ url('input_tupoksi') }}"> <i class="fa-regular fa-image"></i>Tupoksi</a></li>
+         <li class=""><a href="{{ url('input_susunanorganisasi') }}"> <i class="fa-regular fa-image"></i>Susunan Organisasi</a></li>
+<!--         <li class=""><a href="{{ url('/') }}"> <i class="fa-solid fa-newspaper"></i></i>Tampilan Berita</a>
+        </li> -->
         <!-- <li><a href="forms.html"> <i class="icon-padnote"></i>-</a></li> -->
         <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i
                     class="icon-windows"></i>Layanan Publik</a>

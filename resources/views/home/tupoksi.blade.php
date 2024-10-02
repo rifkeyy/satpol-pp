@@ -15,15 +15,6 @@
             box-sizing: border-box;
         }
 
-        .header_section {
-            width: 100%;
-            float: left;
-            background-image: url(../images/.jpg);
-            height: auto;
-            background-size: 100%;
-            padding: 0px 0px 0px 0px;
-        }
-
         .bg-light {
             background-color: transparent !important;
         }
@@ -41,7 +32,7 @@
         }
 
         .navbar-nav {
-            align-items: 0;
+            align-items: center;
         }
 
         .btn:not(:disabled):not(.disabled) {
@@ -102,19 +93,19 @@
             font-family: "Georgia", serif;
             font-size: 12px;
             font-weight: bold;
-            color: #ffffff;
+            color: #fff;
             margin-left: 1rem;
             margin-top: 1rem;
         }
 
         .menu_main li a {
-            color: #ffffff;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 10px;
         }
 
         .menu_main li a:hover {
-            color: #ffffff;
+            color: #fff;
             background-color: #432ff5;
             border-radius: 7px;
         }
@@ -132,6 +123,29 @@
             background-size: 100%;
             padding: 10px 0px 0px 0px;
         }
+
+        /* choose sejarah */
+        .layout_padding {
+            width: 100%;
+            font-size: 36px;
+            color: #000;
+            font-weight: bold;
+            text-align: left;
+            font-family: "Garamond", serif;
+        }
+
+        .table-striped {
+            width: auto;
+            font-size: 16px;
+            color: #000;
+            font-weight: normal;
+            text-align: justify;
+            font-family: "Arial", sans-serif;
+        }
+
+        .layout_padding {
+            margin-top: auto;
+        }
     </style>
 
     <div class="header_section">
@@ -139,14 +153,27 @@
 
     </div>
 
-    <div class="choose_section layout_padding">
-        <div class="container">
-            <div class="modal-header">
-                <h4 class="choose_taital">Tupoksi</h4>
+    @foreach ($tupoksi as $post)
+        <div class="choose_section layout_padding">
+            <div class="container">
+                <table class="table table-striped">
+                    <thead class="title-judul">Tupoksi</thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">
+                                <table class="title-isi">
+                                    <p>
+                                        {{ $post->description }}
+                                    </p>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <p class="choose_text">-</p>
         </div>
-    </div>
+        </div>
+    @endforeach
     <!-- choose section end -->
     <!-- footer section start -->
     <style type="text/css">

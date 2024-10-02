@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html>
 
@@ -64,20 +65,28 @@
             <table class="table_deg">
 
                 <tr class="th_deg">
-                    <th>Description</th>
+
+                    <th>Sejarah</th>
 
                 </tr>
 
-                @foreach ($showsejarah as $post)
+                @foreach ($post as $sejarah)
                     <tr>
 
                         <td>{{ $sejarah->description }}</td>
+                    <tr>
+                        <td>
 
-                        <a href="{{ url('edit_page', $showsejarah->id) }}"class="btn btn-success">Edit</a>
-
+                            <a href="{{ url('edit_sejarah', $sejarah->id) }}"class="btn btn-success">Edit</a>
                         </td>
+                    </tr>
 
-                    </tr @endforeach
+
+                    </tr>
+                @endforeach
+
+
+
             </table>
 
 

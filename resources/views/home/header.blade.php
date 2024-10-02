@@ -29,7 +29,7 @@
 
                         <li class="active"><a href={{ url('berita') }}>Berita</a></li>
 
-                        <li class="active"><a href={{ url('galeri') }}>Galeri</a></li>
+                        <!-- <li class="active"><a href={{ url('galeri') }}>Galeri</a></li> -->
 
                         <li class="nav-item dropdown dropdown-layanan-publik">
                             <div class="nav-link dropdown-toggle" href="#" id="navbarDropdownLayananPublik"

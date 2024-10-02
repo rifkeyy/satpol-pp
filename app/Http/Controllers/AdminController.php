@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\SusunanOrganisasi;
+use App\Models\Tupoksi;
 use Illuminate\Http\Request;
 
 use App\Models\Post;
@@ -27,10 +28,7 @@ class AdminController extends Controller
         return view('admin.inputsejarah');
     }
 
-    public function show_sejarah()
-    {
-        return view('admin.show_sejarah');
-    }
+   
 
     public function post_galeri()
     {
@@ -51,13 +49,75 @@ class AdminController extends Controller
 
     }
 
-    public function showsejarah()
+    public function show_sejarah()
     {
 
-        $sejarahs = Sejarah::all();
-
-        return view('admin.showsejarah',compact('showsejarah'));
+        $post = Sejarah::all(); 
+    
+    return view('admin.show_sejarah',data: compact(var_name: 'post'));
     }
+
+    public function edit_sejarah($id)
+    {
+        
+        $post = Sejarah::find($id);
+
+        return view('admin.edit_sejarah',compact("id"));
+    }
+
+
+    public function input_tupoksi()
+    {
+        return view('admin.input_tupoksi');
+    }
+
+    public function tupoksi(Request $request)
+    {
+        $post=new Tupoksi;
+        $post->description = $request->description;
+        $post->save();
+
+        return redirect()->back()->with('message','Post Added Successfully');
+    }
+
+
+      public function input_susunanorganisasi()
+    {
+        return view('admin.input_susunanorganisasi');
+    }
+
+    public function susunan_organisasi(Request $request)
+    {
+
+        $post=new SusunanOrganisasi;
+
+        $post->name = $request->name;
+        $post->nip = $request->nip;
+        $post->jabatan = $request->jabatan;
+        $image=$request->image;
+
+
+
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+
+            $request->image->move('postimage',$imagename);
+    
+            $post->image = $imagename;
+        }
+
+    
+        
+
+        $post->save();
+
+        return redirect()->back()->with('message','Post Added Successfully');
+
+
+    }
+
+
 
     public function galeri(Request $request)
     {
